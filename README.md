@@ -1,5 +1,5 @@
-# tensorgraph
-Tensorgraph is an **tensorflow example** to show
+# tf-keras-speed-test
+This is an **tensorflow example** to show
 - How to generate checkpoint, graph.pb, tensorboard.
 - How to use checkpoint and graph.pb to merge to freeze graph. (not finished yet)
 - How to load graph with tensorflow c++ api and do the prediction.
