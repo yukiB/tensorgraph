@@ -1,10 +1,9 @@
 # tf-keras-speed-test
-This is an **tensorflow example** to show
-- How to generate checkpoint, graph.pb, tensorboard.
-- How to use checkpoint and graph.pb to merge to freeze graph. (not finished yet)
-- How to load graph with tensorflow c++ api and do the prediction.
+This is an **keras and tensorflow example** to show the difference of　a model's execution speed between keras and tensorflow, executed from python and c++. 
 
-more description can check on my [blog post](http://jackytung8085.blogspot.tw/2016/06/loading-tensorflow-graph-with-c-api-by.html)</br>
+This code forked from JackyTung/tensorgraph.
+More description can check on JackyTung's [blog post](http://jackytung8085.blogspot.tw/2016/06/loading-tensorflow-graph-with-c-api-by.html)</br>
+
 
 # Requirement
 - tensorflow installation, https://www.tensorflow.org/ <br> go to "GET STARTED" --> "installing from source"
@@ -14,20 +13,25 @@ more description can check on my [blog post](http://jackytung8085.blogspot.tw/20
 How to generate checkpoint, graph.pb, tensorboard. <br>
 The directory struct is
 ```
-mnist.py
+mnist_tf.py
+mnist_keras_tf.py
+mnist_keras.py
+mnist_tf_conv.py
+mnist_keras_tf_conv.py
+mnist_keras_conv.py
 board/
-models/
 ```
 After run
 ```
-$ python mnist.py
+$ python mnist_tf.py
 ```
 The directory struct will be expected to
 ```
-mnist.py
+mnist_tf.py
+...
 board/
     event.out.tfevents
-models/
+models_tf/
     graph.pb
     model.ckpt
 Mnist_data/
