@@ -79,6 +79,7 @@ private:
         int magicNum_images = 0, magicNum_labels = 0;
         int itemCount_images = 0, itemCount_labels = 0;
         // READ THE IMAGE FILE DATA
+        std::cout << imagepath << std::endl;
         if(file.is_open()) {
             int row_count = 0, col_count = 0;
             // FILE HEADER INFO is stored as 4 Byte Integers
@@ -92,6 +93,7 @@ private:
             row_count = swap32(row_count);
             col_count= swap32(col_count);
             // Loop throug all the items and store every pixel of every row
+
             for (int i = 0; i < itemCount_images; i++) {
                 MNISTchar tmpchar = MNISTchar();
                 for(int r = 0; r < (row_count * col_count); r++) {
@@ -102,6 +104,8 @@ private:
                 }
                 tmpdata.push_back(tmpchar);
             }
+        } else {
+          std::cout << "failed to open file" << std::endl;
         }
         file.close();
         // READ THE LABEL FILE DATA

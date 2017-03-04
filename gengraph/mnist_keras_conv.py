@@ -68,13 +68,14 @@ kernel_size = (3, 3)
 
 if __name__ == "__main__":
     total_start = time.perf_counter()
+
     parser = argparse.ArgumentParser()
     parser.add_argument("-f", "--force-train", dest="force_train", action="store_true", default=False, help="train new model forcibly although there is a trained model (default: False)")
     args = parser.parse_args()
 
     if not os.path.isdir(f_model):
-        os.makedirs(f_model)    
-
+        os.makedirs(f_model)
+        
     # the data, shuffled and split between train and test sets
     (X_train, y_train), (X_test, y_test) = mnist.load_data()
     X_train = X_train.reshape(X_train.shape[0], img_rows, img_cols, 1)
